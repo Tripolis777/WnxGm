@@ -19,11 +19,14 @@ public class DesktopScreen implements Screen {
     private SimpleWindow window;
     private WnxGmMain game;
 
+    private float width;
+    private float height;
+
     public DesktopScreen(final WnxGmMain game) {
         this.game = game;
 
-        float width = Gdx.graphics.getWidth();
-        float height = Gdx.graphics.getHeight();
+        width = Gdx.graphics.getWidth();
+        height = Gdx.graphics.getHeight();
 
         camera = new OrthographicCamera(width, height);
         camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
@@ -35,8 +38,8 @@ public class DesktopScreen implements Screen {
         float rectY = (height - rectHeight) / 2f;
 
         window = new SimpleWindow(camera);
-        //window.position = new Vector2(rectX, rectY);
-        //window.scale = new Vector2(width, height);
+        window.position = new Vector2(rectX, rectY);
+        window.scale = new Vector2(rectWidth, rectHeight);
         window.show();
         shapeRenderer = new ShapeRenderer();
     }
@@ -83,7 +86,7 @@ public class DesktopScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        window.resize(width, height);
     }
 
     @Override

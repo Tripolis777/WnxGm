@@ -1,5 +1,6 @@
 package com.wnx.gm.GameObjects.Desktop;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.wnx.gm.GameObjects.GameObjectImpl;
@@ -34,6 +35,14 @@ public class DesktopObjectImpl extends GameObjectImpl implements DesktopObject{
 
     @Override
     public void render() {
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        float scaleWidth = width / Gdx.graphics.getWidth();
+        float scaleHeight = height / Gdx.graphics.getHeight();
+
+
     }
 
     @Override

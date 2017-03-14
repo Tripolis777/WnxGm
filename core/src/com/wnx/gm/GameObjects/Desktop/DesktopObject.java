@@ -9,6 +9,7 @@ import com.wnx.gm.GameObjects.GameObject;
 public interface DesktopObject extends GameObject {
 
     public void render();
+    public void resize(int width, int height);
     public void setCamera(OrthographicCamera camera);
 
 }

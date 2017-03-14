@@ -74,18 +74,18 @@ public class SimpleWindow extends DesktopObjectImpl implements Window {
     }
 
     private class SimpleWindowHeader extends WindowHeader {
-        private float headerPrct = 0.1f;
         public SimpleWindowHeader() {
             this.color = new Color(240/255f, 100/255f, 55/255f, 1f);
-            this.height = 50f;
+            this.height = 20f;
         }
 
         private void render() {
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(color);
-            shapeRenderer.rect(SimpleWindow.this.position.x, SimpleWindow.this.position.y + (SimpleWindow.this.scale.y - height * headerPrct),
-                    SimpleWindow.this.scale.x, SimpleWindow.this.scale.y * headerPrct);
+            shapeRenderer.rect(SimpleWindow.this.position.x, SimpleWindow.this.position.y + (SimpleWindow.this.scale.y - height),
+                    SimpleWindow.this.scale.x, this.height);
             shapeRenderer.end();
         }
+
     }
 }
